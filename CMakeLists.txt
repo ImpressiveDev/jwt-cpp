@@ -135,11 +135,13 @@ ADD_SUBDIRECTORY (src)
 #-------------------
 # Test
 #-------------------
+message("!!!!!!!!!!!!!!!! IMPRESSIVE DEBUG START !!!!!!!")
 IF(ENABLE_TESTS MATCHES "ON")
     ENABLE_TESTING(true)
     IF (MSVC)
         SET(gtest_force_shared_crt ON CACHE BOOL "Force gtest to build with shared crt")
     ENDIF(MSVC)
+    message("!!!!!!!!!!!!!!!! ADDING TEST !!!!!!!")
     ADD_SUBDIRECTORY(ext/gtest-1.7.0)
     ADD_SUBDIRECTORY(test)
 ENDIF(ENABLE_TESTS MATCHES "ON")
@@ -147,3 +149,5 @@ ENDIF(ENABLE_TESTS MATCHES "ON")
 if (BUILD_SHARED_LIBS)
     message("Will build JWT as a shared library")
 endif()
+
+message("!!!!!!!!!!!!!!!! IMPRESSIVE DEBUG END !!!!!!!")
